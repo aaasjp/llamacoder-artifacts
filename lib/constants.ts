@@ -1,7 +1,7 @@
 export const MODELS = [
   {
     label: "Kimi K2",
-    value: "moonshotai/Kimi-K2-Instruct",
+    value: "Moonshot-Kimi-K2-Instruct",
   },
   {
     label: "Qwen 3 Coder",
@@ -9,11 +9,11 @@ export const MODELS = [
   },
   {
     label: "DeepSeek V3",
-    value: "deepseek-ai/DeepSeek-V3",
+    value: "deepseek-v3",
   },
   {
-    label: "Llama 3.3 70B",
-    value: "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    label: "Qwen 3 Coder",
+    value: "qwen3-coder-plus",
   },
 ];
 

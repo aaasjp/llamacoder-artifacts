@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: llamacoder_postgres
+    environment:
+      POSTGRES_DB: llamacoder
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: Xingfu168
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_docker_data:/var/lib/postgresql/data
+    restart: unless-stopped 
