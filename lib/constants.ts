@@ -4,10 +4,6 @@ export const MODELS = [
     value: "Moonshot-Kimi-K2-Instruct",
   },
   {
-    label: "Qwen 3 Coder",
-    value: "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8",
-  },
-  {
     label: "DeepSeek V3",
     value: "deepseek-v3",
   },
