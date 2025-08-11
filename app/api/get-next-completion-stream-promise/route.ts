@@ -60,7 +60,7 @@ export async function POST(req: Request) {
         
         for await (const chunk of res) {
           chunkCount++;
-          console.log(`处理第 ${chunkCount} 个数据块:`, chunk);
+          // console.log(`处理第 ${chunkCount} 个数据块:`, chunk);
           
           // 检查是否有usage信息
           if (!chunk.choices?.length) {
@@ -73,7 +73,7 @@ export async function POST(req: Request) {
           // 处理正式回复内容
           if (delta.content) {
             const data = `data: ${JSON.stringify(chunk)}\n\n`;
-            console.log("发送内容:", delta.content);
+            // console.log("发送内容:", delta.content);
             controller.enqueue(encoder.encode(data));
           }
         }
