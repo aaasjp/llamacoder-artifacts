@@ -25,7 +25,7 @@ export async function createChat(
       throw new Error("DASHSCOPE_API_KEY环境变量未设置");
     }
 
-    console.log("createChat:", prompt, model, quality, screenshotUrl);
+    console.log("创建聊天:", prompt, model, quality, screenshotUrl);
     
     const prisma = getPrisma();
   
@@ -53,7 +53,7 @@ export async function createChat(
             {
               role: "system",
               content:
-                "You are a chatbot helping the user create a simple app or script, and your current job is to create a succinct title, maximum 3-5 words, for the chat given their initial prompt. Please return only the title.",
+                "您是一个帮助用户创建简单应用或脚本的聊天机器人，您当前的任务是为聊天创建一个简洁的标题，最多6个词，基于他们的初始提示。请只返回标题。",
             },
             {
               role: "user",
@@ -76,7 +76,7 @@ export async function createChat(
           messages: [
             {
               role: "system",
-              content: `You are a helpful bot. Given a request for building an app, you match it to the most similar example provided. If the request is NOT similar to any of the provided examples, return "none". Here is the list of examples, ONLY reply with one of them OR "none":
+              content: `您是一个有用的机器人。给定一个构建应用的请求，您将其与提供的最相似示例进行匹配。如果请求与任何提供的示例都不相似，请返回"none"。以下是示例列表，只回复其中一个或"none"：
 
               - landing page
               - blog app
@@ -103,8 +103,8 @@ export async function createChat(
       fetchTitle(),
       fetchTopExample(),
     ]);
-    console.log("title:", title);
-    console.log("mostSimilarExample:", mostSimilarExample);
+    console.log("标题:", title);
+    console.log("最相似示例:", mostSimilarExample);
 
     let fullScreenshotDescription;
     if (screenshotUrl) {
@@ -165,7 +165,7 @@ export async function createChat(
     } else if (fullScreenshotDescription) {
       userMessage =
         prompt +
-        "RECREATE THIS APP AS CLOSELY AS POSSIBLE: " +
+        "尽可能接近地重新创建此应用：" +
         fullScreenshotDescription;
     } else {
       userMessage = prompt;
@@ -198,7 +198,7 @@ export async function createChat(
     const lastMessage = newChat.messages
       .sort((a, b) => a.position - b.position)
       .at(-1);
-    if (!lastMessage) throw new Error("No new message");
+    if (!lastMessage) throw new Error("没有新消息");
 
     return {
       chatId: chat.id,

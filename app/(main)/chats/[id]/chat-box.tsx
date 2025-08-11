@@ -70,7 +70,7 @@ export default function ChatBox({
         }}
       >
         <fieldset className="w-full" disabled={disabled}>
-          <div className="relative flex rounded-lg border-4 border-gray-300 bg-white">
+                      <div className="relative flex rounded-xl border-4 border-purple-200 bg-gradient-to-br from-white to-purple-50 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative w-full">
               <div className="w-full p-2">
                 <p className="invisible min-h-[48px] w-full whitespace-pre-wrap">
@@ -79,13 +79,13 @@ export default function ChatBox({
               </div>
               <textarea
                 ref={textareaRef}
-                placeholder="Follow up"
+                placeholder="继续对话"
                 autoFocus={!disabled}
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
                 required
                 name="prompt"
-                className="peer absolute inset-0 w-full resize-none bg-transparent p-2 placeholder-gray-500 focus:outline-none disabled:opacity-50"
+                className="peer absolute inset-0 w-full resize-none bg-transparent p-2 placeholder-purple-400 focus:outline-none disabled:opacity-50"
                 onKeyDown={(event) => {
                   if (event.key === "Enter" && !event.shiftKey) {
                     event.preventDefault();
@@ -96,13 +96,13 @@ export default function ChatBox({
                 }}
               />
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded peer-focus:outline peer-focus:outline-offset-0 peer-focus:outline-blue-500" />
+            <div className="pointer-events-none absolute inset-0 rounded peer-focus:outline peer-focus:outline-offset-0 peer-focus:outline-purple-500" />
 
             <div className="absolute bottom-1.5 right-1.5 flex has-[:disabled]:opacity-50">
-              <div className="pointer-events-none absolute inset-0 -bottom-[1px] rounded bg-blue-700" />
+              <div className="pointer-events-none absolute inset-0 -bottom-[1px] rounded bg-purple-700" />
 
               <button
-                className="relative inline-flex size-6 items-center justify-center rounded bg-blue-500 font-medium text-white shadow-lg outline-blue-300 hover:bg-blue-500/75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="relative inline-flex size-8 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-white shadow-lg hover:shadow-xl outline-purple-300 hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all duration-300 animate-pulse-glow"
                 type="submit"
               >
                 <Spinner loading={disabled}>

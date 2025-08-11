@@ -35,58 +35,92 @@
     @apply min-w-0;
   }
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* 明亮主题 - 色彩鲜明饱满 */
+    --background: 210 40% 98%;
+    --foreground: 220 25% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 220 25% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --popover-foreground: 220 25% 15%;
+    --primary: 250 95% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 85% 95%;
+    --secondary-foreground: 250 95% 60%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 45 95% 85%;
+    --accent-foreground: 45 95% 25%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 250 95% 60%;
+    --chart-1: 250 95% 60%;
+    --chart-2: 45 95% 55%;
+    --chart-3: 160 85% 45%;
+    --chart-4: 340 85% 55%;
+    --chart-5: 280 85% 65%;
+    --radius: 1rem;
+    
+    /* 新增渐变色彩 */
+    --gradient-primary: linear-gradient(135deg, hsl(250, 95%, 60%) 0%, hsl(280, 85%, 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(45, 95%, 85%) 0%, hsl(60, 95%, 80%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(160, 85%, 45%) 0%, hsl(180, 85%, 50%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(340, 85%, 55%) 0%, hsl(15, 85%, 60%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(210, 85%, 55%) 0%, hsl(250, 85%, 60%) 100%);
   }
+  
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* 深色主题 - 保持色彩鲜明但调暗 */
+    --background: 220 25% 8%;
+    --foreground: 220 15% 95%;
+    --card: 220 25% 12%;
+    --card-foreground: 220 15% 95%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 15% 95%;
+    --primary: 250 85% 65%;
+    --primary-foreground: 220 25% 8%;
+    --secondary: 280 25% 20%;
+    --secondary-foreground: 250 85% 65%;
+    --muted: 220 25% 15%;
+    --muted-foreground: 220 15% 65%;
+    --accent: 45 25% 25%;
+    --accent-foreground: 45 85% 75%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 220 15% 95%;
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 250 85% 65%;
+    --chart-1: 250 85% 65%;
+    --chart-2: 45 85% 60%;
+    --chart-3: 160 75% 50%;
+    --chart-4: 340 75% 60%;
+    --chart-5: 280 75% 70%;
+    
+    /* 深色主题渐变 */
+    --gradient-primary: linear-gradient(135deg, hsl(250, 85%, 65%) 0%, hsl(280, 75%, 70%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(45, 25%, 25%) 0%, hsl(60, 25%, 30%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(160, 75%, 50%) 0%, hsl(180, 75%, 55%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(340, 75%, 60%) 0%, hsl(15, 75%, 65%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(210, 75%, 60%) 0%, hsl(250, 75%, 65%) 100%);
   }
+}
+
+/* 新增动画效果 */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.6); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes spinner {
@@ -104,5 +138,55 @@
   }
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220, 40%, 96%) 100%);
+    background-attachment: fixed;
+  }
+}
+
+/* 新增工具类 */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-cool {
+    background: var(--gradient-cool);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .glass-effect-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }

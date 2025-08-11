@@ -62,7 +62,7 @@ export default function ChatLog({
 function UserMessage({ content }: { content: string }) {
   return (
     <div className="relative inline-flex max-w-[80%] items-end gap-3 self-end">
-      <div className="whitespace-pre-wrap rounded bg-white px-4 py-2 text-gray-600 shadow">
+      <div className="whitespace-pre-wrap rounded-2xl bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-3 text-purple-800 shadow-lg border border-purple-200">
         {content}
       </div>
     </div>
@@ -94,9 +94,9 @@ function AssistantMessage({
             <div className="my-4">
               <button
                 disabled
-                className="inline-flex w-full animate-pulse items-center gap-2 rounded-lg border-4 border-gray-300 p-1.5"
+                className="inline-flex w-full animate-pulse items-center gap-2 rounded-xl border-4 border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-2"
               >
-                <div className="flex size-8 items-center justify-center rounded bg-gray-300 font-bold">
+                <div className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 font-bold text-white">
                   V{version}
                 </div>
                 <div className="flex flex-col gap-0.5 text-left leading-none">
@@ -109,11 +109,11 @@ function AssistantMessage({
           ) : message ? (
             <div className="my-4">
               <button
-                className={`${isActive ? "bg-white" : "bg-gray-300 hover:border-gray-400 hover:bg-gray-400"} inline-flex w-full items-center gap-2 rounded-lg border-4 border-gray-300 p-1.5`}
+                className={`${isActive ? "bg-gradient-to-r from-purple-100 to-pink-100 border-purple-300" : "bg-gradient-to-r from-gray-100 to-gray-200 hover:border-purple-300 hover:from-purple-50 hover:to-pink-50"} inline-flex w-full items-center gap-2 rounded-xl border-4 p-2 transition-all duration-300 hover:scale-105`}
                 onClick={() => onMessageClick(message)}
               >
                 <div
-                  className={`${isActive ? "bg-gray-300" : "bg-gray-200"} flex size-8 items-center justify-center rounded font-bold`}
+                  className={`${isActive ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white" : "bg-gradient-to-r from-gray-400 to-gray-500 text-white"} flex size-8 items-center justify-center rounded-lg font-bold`}
                 >
                   V{version}
                 </div>
@@ -137,10 +137,10 @@ function AssistantMessage({
           ) : (
             <div className="my-4">
               <button
-                className="inline-flex w-full items-center gap-2 rounded-lg border-4 border-gray-300 p-1.5"
+                className="inline-flex w-full items-center gap-2 rounded-xl border-4 border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 p-2"
                 disabled
               >
-                <div className="flex size-8 items-center justify-center rounded bg-gray-300 font-bold">
+                <div className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-r from-gray-400 to-gray-500 font-bold text-white">
                   V{version}
                 </div>
                 <div className="flex flex-col gap-0.5 text-left leading-none">

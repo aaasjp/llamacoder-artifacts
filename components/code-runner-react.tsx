@@ -73,11 +73,11 @@ function ErrorMessage({ onRequestFix }: { onRequestFix: (e: string) => void }) {
   if (!sandpack.error) return null;
 
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-white/5 text-base backdrop-blur-sm">
-      <div className="max-w-[400px] rounded-md bg-red-500 p-4 text-white shadow-xl shadow-black/20">
-        <p className="text-lg font-medium">Error</p>
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-white/10 text-base backdrop-blur-sm">
+      <div className="max-w-[400px] rounded-xl bg-gradient-to-r from-red-500 to-pink-500 p-6 text-white shadow-2xl shadow-black/30 border border-red-200">
+        <p className="text-lg font-bold">Error</p>
 
-        <p className="mt-4 line-clamp-[10] overflow-x-auto whitespace-pre font-mono text-xs">
+        <p className="mt-4 line-clamp-[10] overflow-x-auto whitespace-pre font-mono text-xs bg-white/10 rounded-lg p-3">
           {sandpack.error.message}
         </p>
 
@@ -93,7 +93,7 @@ function ErrorMessage({ onRequestFix }: { onRequestFix: (e: string) => void }) {
               await new Promise((resolve) => setTimeout(resolve, 2000));
               setDidCopy(false);
             }}
-            className="rounded border-red-300 px-2.5 py-1.5 text-sm font-semibold text-red-50"
+            className="rounded-lg border-2 border-red-300 px-3 py-2 text-sm font-semibold text-red-50 hover:bg-red-400 transition-all duration-200"
           >
             {didCopy ? <CheckIcon size={18} /> : <CopyIcon size={18} />}
           </button>
@@ -102,7 +102,7 @@ function ErrorMessage({ onRequestFix }: { onRequestFix: (e: string) => void }) {
               if (!sandpack.error) return;
               onRequestFix(sandpack.error.message);
             }}
-            className="rounded bg-white px-2.5 py-1.5 text-sm font-medium text-black"
+            className="rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-3 py-2 text-sm font-medium text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-lg"
           >
             Try to fix
           </button>

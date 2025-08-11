@@ -21,7 +21,7 @@ export default function Header() {
         <a
           href="https://github.com/nutlope/llamacoder"
           target="_blank"
-          className="ml-auto hidden items-center gap-3 rounded-full bg-white/95 px-5 py-2 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-gray-100 transition-all hover:bg-white hover:shadow-md hover:ring-gray-200 sm:flex"
+          className="ml-auto hidden items-center gap-3 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-5 py-3 text-sm font-medium text-purple-700 shadow-lg ring-2 ring-purple-200 transition-all hover:from-purple-200 hover:to-pink-200 hover:shadow-xl hover:scale-105 sm:flex"
         >
           <GithubIcon className="h-[18px] w-[18px]" />
           <div className="flex items-center gap-1.5">

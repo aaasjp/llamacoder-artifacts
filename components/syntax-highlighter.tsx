@@ -45,6 +45,6 @@ export default function SyntaxHighlighter({
   });
 
   return (
-    <div className="p-4 text-sm" dangerouslySetInnerHTML={{ __html: html }} />
+    <div className="p-4 text-sm bg-gradient-to-br from-gray-50 to-purple-50 rounded-lg border border-purple-100" dangerouslySetInnerHTML={{ __html: html }} />
   );
 }

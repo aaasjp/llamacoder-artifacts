@@ -202,7 +202,7 @@ export default function PageClient({ chat }: { chat: Chat }) {
               }}
               onRequestFix={(error: string) => {
                 startTransition(async () => {
-                  let newMessageText = `The code is not working. Can you fix it? Here's the error:\n\n`;
+                  let newMessageText = `代码无法运行。您能修复它吗？这是错误信息：\n\n`;
                   newMessageText += error.trimStart();
                   const message = await createMessage(
                     chat.id,

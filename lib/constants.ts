@@ -15,24 +15,24 @@ export const MODELS = [
 
 export const SUGGESTED_PROMPTS = [
   {
-    title: "Quiz app",
+    title: "测验应用",
     description:
-      "Make me a quiz app about American history. Make sure to give the user an explanation on each question whether they got it right or wrong and keep a score going",
+      "为我制作一个关于美国历史的测验应用。确保在每个问题上给用户解释，无论他们答对还是答错，并保持分数统计",
   },
   {
-    title: "SaaS Landing page",
+    title: "SaaS 落地页",
     description:
-      "A landing page for a SaaS business that includes a clear value proposition in a prominent hero section, concise feature overviews, testimonials, pricing, and a clear call-to-action button leading to a free trial or demo.",
+      "一个SaaS业务的落地页，包含在突出英雄区域的清晰价值主张、简洁的功能概述、用户评价、定价，以及引导到免费试用或演示的明确行动号召按钮。",
   },
   {
-    title: "Pomodoro Timer",
+    title: "番茄钟计时器",
     description:
-      "Make a beautiful pomodoro timer where I can adjust the lengths of the focus time and the break and it will beep when done.",
+      "制作一个漂亮的番茄钟计时器，我可以调整专注时间和休息时间的长度，完成后会发出提示音。",
   },
   {
-    title: "Blog app",
+    title: "博客应用",
     description:
-      "Make me a blog app that has a few blogs there for people to read. Users can click into the blogs and read them, then go back to the homepage to see more.",
+      "为我制作一个博客应用，里面有一些供人们阅读的博客。用户可以点击进入博客阅读，然后返回首页查看更多。",
   },
   // {
   //   title: "Recipe site",
@@ -40,13 +40,13 @@ export const SUGGESTED_PROMPTS = [
   //     "Make me a site that has easy to make recipes in a grid that you can click into and see the full recipe. Also make it possible for me to add my own",
   // },
   {
-    title: "Flashcard app",
+    title: "闪卡应用",
     description:
-      "Build me a flashcard app about llamas. Have some flash cards and also have the ability for users to add their own. Show one side of a card at first and reveal the answer on button click, keeping track of correct guesses to measure progress.",
+      "为我构建一个关于羊驼的闪卡应用。有一些闪卡，用户也可以添加自己的。首先显示卡片的一面，点击按钮后显示答案，跟踪正确答案以衡量进度。",
   },
   {
-    title: "Timezone dashboard",
+    title: "时区仪表板",
     description:
-      "Make me a time zone dashboard that shows me the time zone in the top 6 most popular time zones and gives me a dropdown to add others",
+      "为我制作一个时区仪表板，显示前6个最受欢迎时区的时间，并给我一个下拉菜单来添加其他时区",
   },
 ];
