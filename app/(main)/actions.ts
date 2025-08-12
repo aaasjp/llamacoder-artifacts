@@ -69,6 +69,8 @@ export async function createChat(
     }
 
     async function fetchTopExample() {
+      return "none";
+      /*
       try {
         const findSimilarExamples = await openai.chat.completions.create({
           // model: "Moonshot-Kimi-K2-Instruct",
@@ -97,6 +99,7 @@ export async function createChat(
       } catch (error) {
         return "none";
       }
+      */
     }
 
     const [title, mostSimilarExample] = await Promise.all([
@@ -131,8 +134,10 @@ export async function createChat(
         });
 
         fullScreenshotDescription = screenshotResponse.choices[0].message?.content;
+        console.log("截图描述:", fullScreenshotDescription);
       } catch (error) {
         fullScreenshotDescription = undefined;
+        console.log("截图描述获取失败:", error);
       }
     }
 
@@ -159,6 +164,7 @@ export async function createChat(
         });
 
         userMessage = initialRes.choices[0].message?.content ?? prompt;
+        console.log("根据用户指令的规划结果:", userMessage);
       } catch (error) {
         userMessage = prompt;
       }

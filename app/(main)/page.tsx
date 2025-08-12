@@ -17,7 +17,7 @@ import { use, useState, useRef, useTransition } from "react";
 import { createChat } from "./actions";
 import { Context } from "./providers";
 import Header from "@/components/header";
-import { useS3Upload } from "next-s3-upload";
+import { useOSSUpload } from "@/hooks/use-oss-upload";
 import UploadIcon from "@/components/icons/upload-icon";
 import { XCircleIcon } from "@heroicons/react/20/solid";
 import { MODELS, SUGGESTED_PROMPTS } from "@/lib/constants";
@@ -38,13 +38,13 @@ export default function Home() {
 
   const [isPending, startTransition] = useTransition();
 
-  const { uploadToS3 } = useS3Upload();
+  const { uploadToOSS } = useOSSUpload();
   const handleScreenshotUpload = async (event: any) => {
     if (prompt.length === 0) setPrompt("构建这个");
     setQuality("low");
     setScreenshotLoading(true);
     let file = event.target.files[0];
-    const { url } = await uploadToS3(file);
+    const { url } = await uploadToOSS(file);
     setScreenshotUrl(url);
     setScreenshotLoading(false);
   };

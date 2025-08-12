@@ -215,4 +215,14 @@ const dependencies = {
   "tailwindcss-animate": "^1.0.7",
   "framer-motion": "^11.15.0",
   vaul: "^0.9.1",
+  // 3D 效果相关包
+  "three": "^0.162.0",
+  "@react-three/fiber": "^8.15.19",
+  "@react-three/drei": "^9.102.6",
+  "@react-three/postprocessing": "^2.16.1",
+  "leva": "^0.9.35",
+  "@react-three/cannon": "^6.6.0",
+  "zustand": "^4.5.2",
+  "maath": "^0.10.7",
+  "r3f-perf": "^6.4.0",
 };

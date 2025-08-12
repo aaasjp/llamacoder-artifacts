@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     max_tokens: 8192,
   });
 
-  console.log("OpenAI API response:", res);
+  // console.log("OpenAI API response:", res);
 
   // 根据阿里云DashScope官方示例创建流式响应
   const encoder = new TextEncoder();
