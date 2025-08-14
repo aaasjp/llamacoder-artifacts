@@ -1,5 +1,9 @@
 export const MODELS = [
   {
+    label: "GPT-4o",
+    value: "gpt-4o",
+  },
+  {
     label: "Kimi K2",
     value: "Moonshot-Kimi-K2-Instruct",
   },

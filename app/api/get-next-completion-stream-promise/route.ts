@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 import OpenAI from "openai";
+import { AzureOpenAI } from "openai";
 
 export async function POST(req: Request) {
   const prisma = new PrismaClient();
@@ -32,16 +33,27 @@ export async function POST(req: Request) {
     messages = [messages[0], messages[1], messages[2], ...messages.slice(-7)];
   }
 
-  const openai = new OpenAI({
-    apiKey: process.env.DASHSCOPE_API_KEY,
-    baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
-  });
+  // 按照Azure OpenAI的方式配置API客户端
+  let client;
+  if (model === "gpt-4o") {
+    // 使用Azure OpenAI
+    const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
+    const apiKey = process.env.AZURE_OPENAI_API_KEY;
+    const apiVersion = process.env.OPENAI_API_VERSION;
+    client = new AzureOpenAI({ endpoint, apiKey, apiVersion });
+  } else {
+    // 使用阿里云DashScope API
+    client = new OpenAI({
+      apiKey: process.env.DASHSCOPE_API_KEY,
+      baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    });
+  }
 
   console.log("route.ts messages:", messages.map((m) => ({ role: m.role, content: m.content })));
   console.log("route.ts model:", model);
   
-  const res = await openai.chat.completions.create({
-    model,
+  const res = await client.chat.completions.create({
+    model: model === "gpt-4o" ? process.env.AZURE_OPENAI_DEPLOYMENT_NAME : model,
     messages: messages.map((m) => ({ role: m.role, content: m.content })),
     stream: true,
     temperature: 0.2,

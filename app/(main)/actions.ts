@@ -25,7 +25,7 @@ export async function createChat(
       throw new Error("DASHSCOPE_API_KEY环境变量未设置");
     }
 
-    console.log("创建聊天:", prompt, model, quality, screenshotUrl);
+    console.log("创建聊天:", "prompt:", prompt, "model:", model, "quality:", quality, "screenshotUrl:", screenshotUrl);
     
     const prisma = getPrisma();
   
@@ -47,8 +47,8 @@ export async function createChat(
     async function fetchTitle() {
       try {
         const responseForChatTitle = await openai.chat.completions.create({
-          // model: "Moonshot-Kimi-K2-Instruct",
-          model: model,
+          model: "Moonshot-Kimi-K2-Instruct",
+          // model: model,
           messages: [
             {
               role: "system",
@@ -64,6 +64,7 @@ export async function createChat(
         const title = responseForChatTitle.choices[0].message?.content || prompt;
         return title;
       } catch (error) {
+        console.log("标题获取失败:", error);
         return prompt;
       }
     }
@@ -73,8 +74,8 @@ export async function createChat(
       /*
       try {
         const findSimilarExamples = await openai.chat.completions.create({
-          // model: "Moonshot-Kimi-K2-Instruct",
-          model: model,
+          model: "Moonshot-Kimi-K2-Instruct",
+          // model: model,
           messages: [
             {
               role: "system",
@@ -145,8 +146,8 @@ export async function createChat(
     if (quality === "high") {
       try {
         let initialRes = await openai.chat.completions.create({
-          // model: "qwen3-coder-plus",
-          model: model,
+          model: "Moonshot-Kimi-K2-Instruct",
+          // model: model,
           messages: [
             {
               role: "system",
@@ -166,6 +167,7 @@ export async function createChat(
         userMessage = initialRes.choices[0].message?.content ?? prompt;
         console.log("根据用户指令的规划结果:", userMessage);
       } catch (error) {
+        console.log("根据用户指令的规划结果获取失败:", error);
         userMessage = prompt;
       }
     } else if (fullScreenshotDescription) {

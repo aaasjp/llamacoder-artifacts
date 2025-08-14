@@ -104,7 +104,7 @@ function ErrorMessage({ onRequestFix }: { onRequestFix: (e: string) => void }) {
             }}
             className="rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-3 py-2 text-sm font-medium text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-lg"
           >
-            Try to fix
+            尝试修复
           </button>
         </div>
       </div>
@@ -177,7 +177,7 @@ const shadcnFiles = {
   `,
 };
 
-const dependencies = {
+export const dependencies = {
   "lucide-react": "latest",
   recharts: "2.9.0",
   "react-router-dom": "latest",
